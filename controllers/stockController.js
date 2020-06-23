@@ -47,7 +47,9 @@ exports.updateStock = catchAsync(async (req, res) => {
     { new: true },
     (err, result) => {
       if (err) {
-        return res.json(422).json({ status: "Fail", message: err });
+        return res
+          .status(422)
+          .json({ status: "Fail", message: "Type already exists" });
       }
       res.status(200).json({
         status: "success",
