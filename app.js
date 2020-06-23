@@ -12,7 +12,7 @@ const stockRoutes = require("./routes/stockRoutes");
 app.use(express.json({ limit: "10kb" }));
 app.use(cors());
 app.use("/api/v1/auth", userRoutes);
-app.use("/api/v1/stock", stockRoutes);
+app.use("/api/v1/product", stockRoutes);
 
 mongoose
   .connect(process.env.DATABASE, {
